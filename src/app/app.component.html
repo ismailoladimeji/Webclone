@@ -26,7 +26,7 @@
         <li class="nav-item test2">
           <div class="nav-link dropdown">
             <button class="dropbtn">{{"Reseller Pricing"| translate}} <i class="fa fa-angle-down"></i></button>
-            <div class="dropdown-content">
+            <div class="dropdown-content show">
               <a class="dropdown-item" >IMEI Service</a>
               <a class="dropdown-item" >Sever Service</a>
               <a class="dropdown-item" >Remote Service</a>
@@ -58,25 +58,18 @@
   <div class="collapse navbar-collapse " id="navbarResponsive">
     <ul class="navbar-nav ml-auto">
       <li class="nav-item">
-        <div class="nav-link dropdown">
+        <div class="nav-link dropdown" (mouseover)="mouseOver()" (mouseout)="mouseOver()">
           <button class="dropbtn">Sever Service<i class="fa fa-angle-down"></i></button>
-          <div class="dropdown-content">
-            <a class="dropdown-item" >IMEI Service</a>
-            <a class="dropdown-item" >Sever Service</a>
-            <a class="dropdown-item" >Remote Service</a>
-            <a class="dropdown-item" >File Service</a>
-          </div>
+          <!-- <div class="dropdown-content">
+           <div class="min">
+            <a class="dropdown-item" *ngFor="let item of serviceObj">IMEI Service</a>
+           </div>
+          </div> -->
         </div>
       </li>
       <li class="nav-item">
-        <div class="nav-link dropdown">
+        <div class="nav-link dropdown"(mouseover)="mouseOver()" (mouseout)="mouseOver()">
           <button class="dropbtn">IMEI Service<i class="fa fa-angle-down"></i></button>
-          <div class="dropdown-content">
-            <a class="dropdown-item" >IMEI Service</a>
-            <a class="dropdown-item" >Sever Service</a>
-            <a class="dropdown-item" >Remote Service</a>
-            <a class="dropdown-item" >File Service</a>
-          </div>
         </div>
       </li>
     </ul>
@@ -86,11 +79,13 @@
   </div>
 </nav>
 
-<div class="test2">
-  <div class="test"></div>
+<div class="row col-md-12 p-0 mx-0 dropdown-content pt-4 con" [hidden]="!showed" (mouseover)="showed=true" (mouseout)="showed=false">
+  <a class="min" *ngFor="let item of serviceObj"><span>{{item.key}}</span></a>
 </div>
 
 
 <footer id="footer">
   <app-footer></app-footer>
 </footer>
+
+
