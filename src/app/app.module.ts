@@ -7,13 +7,15 @@ import { I18nModule } from './i18n/i18n.module';
 import { SelectLanguageComponent } from './select-language/select-language.component';
 import { BodyComponent } from './body/body.component';
 import { CardsComponent } from './cards/cards.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SelectLanguageComponent,
     BodyComponent,
-    CardsComponent
+    CardsComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
