@@ -1,0 +1,153 @@
+<!-- <h1>
+   {{title}} 
+</h1>
+
+<div class="card" *ngFor="let item of selectedData.data">
+
+    <img src="" alt="">
+    <div class="container">
+        <h5 >
+            {{item.key}}
+        </h5>
+        <h4>
+            {{item.price}}
+        </h4>
+
+    </div>
+    
+
+</div>
+ -->
+
+
+<div class="bg-gray">
+    <div class="w-100    min-height">
+        
+
+                <div class="container">
+                    <ul class="breadcrumb">
+                         <i class="fal fa-home"></i>  <a href="./index">Home </a> /  <a href="./cart/group/15/service/imei/groupname/Mac-Service--T2M1M2-">{{title}}  </a>      
+                    </ul>
+                </div>
+
+
+            <div class="container">
+                <h2 class="page-title">
+                    Cart
+                </h2>
+            </div>
+        
+        <div>
+
+
+
+<div class="container"><div class="page-container">
+<div class="row">
+    <div class="col-lg-12">
+        <div class="">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h2 class="page-title m-0 inner-page-title">
+                          {{title}} 						
+                    </h2>
+            </div>
+
+
+                <div class="col-lg-6">
+                    <div class="d-flex justify-content-end">
+                        <div class="position-relative   ml-auto mr-3">
+                                <input type="text" name="modelsearch" class="form-control " onkeyup="quickModel1(this)" autocomplete="off" id="modelsearch" placeholder="Search Model" fdprocessedid="ym0gxc">
+                                <ul id="modelslist" class="modellist-dp position-absolute p-0 border w-100" style="z-index:99;overflow: auto;height:250px;display:none;top:38px;"></ul>
+                                <input type="hidden" name="brand" id="brand">
+                                <input type="hidden" name="model_id" id="model">
+                            </div>
+                            <div class=" d-none   d-lg-block">
+                                <select class="form-control no-chosen" onchange="location.href='./cart/group/15/viewmode/grid/service/product/sortby/'+this.value" fdprocessedid="mwflb">
+                                    <option value="">Sort By</option>
+                                    <option value="">Position</option>
+                                    <option value="featured">Featured Items</option>
+                                    <option selected="selected" value="namea">Name : A To Z</option>
+                                    <option value="namez">Name : Z To A</option>
+                                    <option value="pricel">Price : Low To High</option>
+                                    <option value="priceh">Price : High To Low</option>
+                                </select>
+                            </div>
+                        </div>
+                </div>
+            </div>
+
+
+        <div>
+     </div>
+
+</div>
+
+        
+<div class="row" >
+                                         
+   <div class="col-md-3 col-lg-3  col-product" *ngFor="let item of selectedData.data">
+        <div class="card   h-100 card-product  ">
+            <a class="h-100 d-flex flex-column" href="./imei/iMac-24inch-M1-2021?pid=207">
+                <div class="position-relative card-product-img">
+                    <div class="d-flex h-100  align-items-center">
+
+                       <img class="card-img-top  mx-auto" src="images/gallery/macgg.png" alt="">
+                    </div>
+                        <div class="text-center">
+                            <span class="badge badge-danger hot">HOT</span>
+                        </div>
+                </div>
+                <div class="card-body pb-0 position-relative">
+
+                <div class="d-none card-info d-lg-block">
+                    <div class="truncate-text"> {{item.key}} </div>
+                    <div class="price">
+                        <span>
+                            <span class="prefix"></span> {{item.price}}<span class="suffix"></span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="product-info">
+
+                    <span class="service-name">
+                        {{item.key}}
+                    </span>
+
+                   <div class="price">
+                    <span>
+                        <span class="prefix"></span>{{item.price}}<span class="suffix"></span>
+                    </span>
+                    </div>
+                    
+
+                </div>
+
+                
+            </div>
+            </a>
+        </div>
+   </div>
+
+
+  
+            </div>
+
+        
+
+        
+
+    </div>
+</div>
+
+
+
+</div></div>
+<div class="text-center">
+
+</div>
+
+
+</div>
+</div>
+</div>
