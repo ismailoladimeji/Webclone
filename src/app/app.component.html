@@ -79,13 +79,19 @@
   </div>
 </nav>
 
+<!-- <div>
+  <app-body></app-body>
+
+</div> -->
 <div class="row col-md-12 p-0 mx-0 dropdown-content pt-4 con" [hidden]="!showed" (mouseover)="showed=true" (mouseout)="showed=false">
   <a class="min" *ngFor="let item of serviceObj"><span>{{item.key}}</span></a>
 </div>
+<router-outlet></router-outlet>
 
 
 <footer id="footer">
   <app-footer></app-footer>
 </footer>
+
 
 

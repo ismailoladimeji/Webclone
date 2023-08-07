@@ -33,6 +33,7 @@ console.log(createObject("MDM Bypass Services;PUBG Purchase [ UC ] Top UP;PUBG: 
 ))
 
 function createObject2(x){
+
 //    x= x.replaceAll(/\s*1-5/,';1-5')
 //    x=x.replaceAll(/\s*1-5/,';;$')
    x=x.replaceAll(/(\$\s*\d\d*)/g,'::$1;;')
@@ -53,4 +54,3 @@ function createObject2(x){
 str='';
 console.log(createObject2(" MacBook Pro (13-inch, M1, 2020) 	Instant 	$ 350 	MacBook Pro (13-inch, M2, 2022) 	Instant 	$ 450 	MacBook Pro (14-inch, 2021) 	Instant 	$ 360 	MacBook Pro (14-inch, 2023) 	Miniutes 	$ 550 	MacBook Pro (15-inch, 2018) 	Instant 	$ 220 	MacBook Pro (15-inch, 2019) 	Instant 	$ 240 	MacBook Pro (16-inch, 2019) 	Instant 	$ 260 	MacBook Pro (16-inch, 2021) 	Instant 	$ 400 	MacBook Pro (16-inch, 2023) 	Instant 	$ 700 	iMac (24-inch, M1, 2021) 	Instant 	$ 350 	MacBook Air (M2, 2022) 	Instant 	$ 350 	MacBook Air (M1, 2020) 	Instant 	$ 300 	MacBook Air (15-inch, M2, 2023) 	Miniutes 	$ 500 	MacBook Pro (13-inch, 2020, Four Thunderbolt 3 ports) 	Instant 	$ 240 	MacBook Pro (13-inch, 2018, Four Thunderbolt 3 Ports) 	Instant 	$ 200 	MacBook Pro (13-inch, 2019, Four Thunderbolt 3 Ports) 	Instant 	$ 220 	MacBook Pro (13-inch, 2020, Two Thunderbolt 3 ports) 	Instant 	$ 260 	MacBook Pro (13-inch, 2019, Two Thunderbolt 3 ports) 	Instant 	$ 240 	Mac mini (2018) 	Instant 	$ 220 	Mac mini (M1, 2020) 	Instant 	$ 360 	Mac mini (2023) 	Instant 	$ 400 	Mac Pro (2019) 	Instant 	$ 280 	Mac Pro (Rack, 2019) 	Miniutes 	$ 280 	Mac Pro (2023) 	Miniutes 	$ 650 	Mac Studio (2022) 	Miniutes 	$ 600 	Mac Studio (2023) 	Instant 	$ 650 	MacBook Air (Retina, 13-inch, 2018) 	Instant 	$ 200 	MacBook Air (Retina, 13-inch, 2019) 	Miniutes 	$ 230 	MacBook Air (Retina, 13-inch, 2020) 	Instant 	$ 250 	iMac (Retina 5K, 27-inch, 2020) 	Miniutes 	$ 280 	iMac Pro (2017) 	Instant 	$ 200"
 ))
-

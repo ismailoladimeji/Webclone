@@ -1,17 +1,20 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CardsComponent } from './cards/cards.component';
+import { BodyComponent } from './body/body.component';
 
-const routes: Routes = [ 
-  // { 
-  //   path: 'expenses', 
-  //   component: ExpenseEntry4Component
-  // },
-  // { 
-  //   path: 'expenses/detail/:id', 
-  //   component: ExpenseEntryComponent 
-  // }, 
-  // { 
-  //   path: '', redirectTo: 'expenses', pathMatch: 'full' }
+const routes: Routes = [
+  { 
+    path: 'carts/:id/:groups', 
+    component: CardsComponent
+  },
+  { 
+    path: 'Home', 
+    component: BodyComponent
+  },
+  {
+  path: '', redirectTo: 'Home', pathMatch: 'full'
+ }
 ];
 
 @NgModule({
