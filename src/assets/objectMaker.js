@@ -34,41 +34,23 @@ console.log(createObject("MDM Bypass Services;PUBG Purchase [ UC ] Top UP;PUBG: 
 
 
 function createObject2(x){
-//    x= x.replaceAll(/\s*1-5/,';1-5')
-//    x=x.replaceAll(/\s*1-5/,';;$')
-   x=x.replaceAll(/(\$\s*\d\d*)/g,'$1::')
-//    x=x.replaceAll(/(\$\s*\d\d*::.*)(Delivery)\s*\w*\s*(Price)/g,'$1;;;;;$2;;;')
-x=x.replaceAll(/(Delivery \s*\w*\s*Price)/g,';;;;;')
-   x=x.replaceAll(/\t/g,'')
-   var arr=x.split('::')
-//    var arr=x.split(';;;;;')
-//    var outerList=[]
-//    arr.map(nu=>{
-//    var t= nu.split(';;;')
-//     var ob ={
-//      serviceCategory: t[0].trim(),
-//      service: t[1]
-//     }
-    // arr1=ob.service.split(';;')
-    // listObj=[];
-    // arr1.map(num=>{
-    //    var obj ={
-    //     key: num.trim(),
-    //     ImagePath: "",
-    //     price:"",
-    //     DeliveryTime:""
-    //    }
-    //   num!=''?listObj.push(obj):'';
-    // })
-    // nu.service= listObj;
-//    nu!=''?outerList.push(ob):'';
-//  })
+    //    x= x.replaceAll(/\s*1-5/,';1-5')
+    //    x=x.replaceAll(/\s*1-5/,';;$')
+       x=x.replaceAll(/(\$\s*\d\d*)/g,'::$1;;')
+       x=x.replaceAll(/\t/g,'')
+     
+        arr1=x.split(';;')
+        listObj=[];
+        arr1.map(num=>{
+            var v = num.split("::")
+           var obj ={
+            key: v[0].trim(),
+            price: v[1]
+           }
+          num!=''?listObj.push(obj):'';
+        })
+        return listObj
+        }
+    str='iKey Prime iCloud Bypass For iPads After 2017 [ WITH SIGNAL ] [ iOS-15 / 16 ] (Windows Tool)	1-5 Miniutes	$ 25 iKey Prime iCloud Bypass For iPads Before 2017 [ WITH SIGNAL ] [ iOS-15 / 16 ] (Windows Tool)	1-5 Miniutes	$ 10 iKey Prime iCloud Bypass For iPhone 5S [ WITH SIGNAL ] [ iOS-12.x ] (Windows Tool)	Miniutes	$ 3 iKey Prime iCloud Bypass For iPhone 6/6+ [ WITH SIGNAL ] [ iOS-12.x ] (Windows Tool)	Minutes	$ 8 iKey Prime iCloud Bypass For iPhone 6S/6S+/SE1 [ WITH SIGNAL ] [ iOS-15.x ] (Windows Tool)	1-5 Miniutes	$ 12 iKey Prime iCloud Bypass For iPhone 7/7+ [ WITH SIGNAL ] [ iOS-15.x ] (Windows Tool)	1-5 Miniutes	$ 22 iKey Prime iCloud Bypass For iPhone 8/8+ [ WITH SIGNAL ] [ iOS-15 / 16 ] (Windows Tool)	1-5 Miniutes	$ 32 iKey Prime iCloud Bypass For iPhone X [ WITH SIGNAL ] [ iOS-15 / 16 ] (Windows Tool)	1-5 Miniutes	$ 38';
+    console.log(createObject2(str))
     
-//     return outerList
-return arr
-    }
-str='';
-console.log(createObject2(
-    "Unbarring 	Delivery Time 	Price 	T-Mobile and Verizon Unbarring / Cleaning [ Fraud NOT Supported ] 	1-3 days 	$ 90 MDM Bypass Services 	Delivery Time 	Price 	HFZ macOS MDM ACTIVATOR All Models 	1-5 Miniutes 	$ 8 	iRemove MacBook MDM Bypass All MacBooks Supported 	1-5 Miniutes 	$ 25"
-))
-

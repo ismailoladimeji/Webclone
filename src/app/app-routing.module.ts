@@ -5,7 +5,7 @@ import { BodyComponent } from './body/body.component';
 
 const routes: Routes = [
   { 
-    path: 'carts/:groups', 
+    path: 'carts/:id/:groups', 
     component: CardsComponent
   },
   { 
