@@ -1,1 +1,21 @@
-<p>select-language works!</p>
+
+ <div class="nav-link dropdown">
+        <button class="dropbtn"><span [class]="val.pix"></span> <span class="ml-1">{{val.name}}</span></button>
+        <div class="dropdown-content show">
+          <a class="dropdown-item" *ngFor="let lang of translate.getLangs()"
+          [attr.selected]="lang === translate.currentLang ? '' : null" (click)=" getClass(lang) "
+        >
+        <span [class]='"fi fi-" + lang'></span> <span class="ml-1">{{lang}}</span></a>
+
+        </div>
+      </div>
+
+      <!-- <div>
+        <select #langSelect (change)="translate.use(langSelect.value)">
+           <option
+             *ngFor="let lang of translate.getLangs()"
+             [value]="lang"
+             [attr.selected]="lang === translate.currentLang ? '' : null"
+           ><span [class]="getClass(lang)"></span><span class="ml-1">{{lang}}</span></option>
+         </select>
+        </div> -->

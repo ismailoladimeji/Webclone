@@ -1,4 +1,14 @@
 {
-    "Home": "дом",
-    "Reseller Pricing":"Цены для реселлеров"
-  }
+  "Home": "Дом",
+  "Reseller Pricing": "Цены для реселлеров",
+  "Registration": "Постановка на учет",
+  "FastUnlucker News-Updates": "Новости Fastunlocker - Обновления",
+  "Login": "Авторизоваться",
+  "Useful Links": "Полезные ссылки",
+  "Contact Us": "Связаться с нами",
+  "Subscribe": "Подписаться",
+  "Don’t miss our future updates!": "Не пропустите наши будущие обновления!",
+  "Get Subscribed now!": "Подпишитесь сейчас!",
+  "Connect With Us": "Свяжитесь с нами;Информационный бюллетень Dom",
+  "Newsletter":"Tseny dlya resellerov"
+}

@@ -2,7 +2,7 @@
 <nav class="navbar navbar-expand-lg static-top">
     <div class="container col-md-11 topNav">
       <div><span class="text-muted"><i class="fa fa-phone" ></i> +962790097505</span> &nbsp;
-        <span  class="text-muted"><i class="fa fa-envelope"></i> GuzUnlocker@gmail.com</span></div>
+        <span  class="text-muted"><i class="fa fa-envelope"></i> FastUnlocker@gmail.com</span></div>
         <app-select-language></app-select-language> 
     </div>
 </nav>
@@ -10,7 +10,7 @@
 <nav class="navbar navbar-expand-lg static-top topNav2">
   <div class="container col-md-11 no-X-Padiing">
     <!-- <a class="navbar-brand" href="#">{{ title }}</a> -->
-    <img class="navbar-brand col-md-2" alt="logo" src="../assets/img/logo (2).png"/>
+    <div class="navbar-brand col-md-2" ><img  style="height: 60px;width: 60%;" alt="logo" src="../assets/img/FASTUNLOCKER LOGO2 png.png"/></div>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
       aria-controls="navbarResponsive" aria- expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -36,19 +36,19 @@
           <div class="test"></div>
         </li>
         <li class="nav-item test2">
-          <a class="nav-link" href="#">Registration</a>
+          <a class="nav-link" href="#">{{"Registration"| translate}}</a>
           <div class="test"></div>
         </li>
         <li class="nav-item test2">
-          <a class="nav-link" href="#">GuzUnlucker News-Updates</a>
+          <a class="nav-link" href="#">{{"FastUnlucker News-Updates"| translate}}</a>
           <div class="test"></div>
         </li>
       </ul>
-      <a class="btn btn-dark text-white"><i class="fa fa-lock mr-2" style="font-size:15px;color: white;"></i>Login</a>
+      <a class="btn btn-dark text-white"><i class="fa fa-lock mr-2" style="font-size:15px;color: white;"></i>{{"Login"| translate}}</a>
     </div>
   </div>
 </nav>
-<nav class="navbar navbar-expand-lg static-top bg-danger topNav3">
+<nav class="navbar navbar-expand-lg static-top topNav3">
   <div class="container col-md-11 ">
    <div>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
@@ -58,7 +58,7 @@
   <div class="collapse navbar-collapse " id="navbarResponsive">
     <ul class="navbar-nav ml-auto">
       <li class="nav-item">
-        <div class="nav-link dropdown" (mouseover)="mouseOver()" (mouseout)="mouseOver()">
+        <div class="nav-link dropdown" (mouseover)="mouseOver()" (mouseout)="mouseOver()" (click)="mouseOver()">
           <button class="dropbtn">Sever Service<i class="fa fa-angle-down"></i></button>
           <!-- <div class="dropdown-content">
            <div class="min">
@@ -68,7 +68,7 @@
         </div>
       </li>
       <li class="nav-item">
-        <div class="nav-link dropdown"(mouseover)="mouseOver()" (mouseout)="mouseOver()">
+        <div class="nav-link dropdown"(mouseover)="mouseOver()" (mouseout)="mouseOver()" (click)="mouseOver()">
           <button class="dropbtn">IMEI Service<i class="fa fa-angle-down"></i></button>
         </div>
       </li>
@@ -84,8 +84,9 @@
 
 </div> -->
 <div class="row col-md-12 p-0 mx-0 dropdown-content pt-4 con" [hidden]="!showed" (mouseover)="showed=true" (mouseout)="showed=false">
-  <a class="min" *ngFor="let item of serviceObj"><span>{{item.key}}</span></a>
+  <a class="min" *ngFor="let item of serviceObj" routerLink="../carts/{{item.refId}}/{{item.key}}" (click)="mouseOver()"><span>{{item.key}}</span></a>
 </div>
+
 <router-outlet></router-outlet>
 
 
