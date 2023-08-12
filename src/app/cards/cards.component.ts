@@ -8,20 +8,37 @@ import { switchMap } from 'rxjs';
   styleUrls: ['./cards.component.scss']
 })
 export class CardsComponent implements OnInit {
-  
-  
+
+
   @Input() title: any;
   @Input() id: any;
-  card$:any
+  card$: any
   selectedData: any
-
   constructor(
-    private router: Router, private route : ActivatedRoute) {
+    private router: Router, private route: ActivatedRoute) {
 
-    }
+  }
 
-    
-  public datas:any [] = [
+  ngOnInit(): void {
+    this.card$ = this.route.paramMap.pipe(switchMap(params => {
+      this.id = Number(params.get('id'));
+      this.title = params.get('groups');
+      return this.datas
+        ;
+    }));
+
+    this.card$.subscribe((data: any) => {
+      if(data.serviceId==this.id){
+        this.selectedData =data 
+      }
+      if(this.id==0){
+        this.selectedData =null;
+      }
+    });
+
+  }
+
+  public datas: any[] = [
     {
       serviceId: 1,
       serviceName: "",
@@ -75,78 +92,88 @@ export class CardsComponent implements OnInit {
         { key: 'MacBook Air (Retina, 13-inch, 2020)', price: '$ 250' },
         { key: 'iMac (Retina 5K, 27-inch, 2020)', price: '$ 280' },
         { key: 'iMac Pro (2017)', price: '$ 200' }
-      ]  
-    },
-    {
-    serviceId: 3, 
-    serviceName: "",
-    data: [
-      { key: 'ICloud Remove By SN Instant - IPad 2nd Gen (2011) (Wifi Only) [ A1395 ]ICloud Remove By SN Instant - IPad 2nd Gen (2011) (Wifi Only) [ A1395 ]', price: '$ 25' },
-      { key: 'ICloud Remove By SN Instant - IPad 7th Gen (2019) (Wifi Only) [ A2197 ]', price: '$ 110' },
-      { key: 'ICloud Remove By SN Instant - IPad Air 1st Gen (2013) (Wifi Only) [ A1474 ]', price: '$ 45' },
-      { key: 'ICloud Remove By SN Instant - IPad Air 5th Gen (2013) (Wifi Only) [ A2588 ]', price: '$ 235' },
-      { key: 'ICloud Remove By SN Instant - IPad Mini 1st Gen (2012) (Wifi Only) [ A1432 ]', price: '$ 30' },
-      { key: 'ICloud Remove By SN Instant - IPad Pro 1st Gen 9.7(2016) (Wifi Only) [ A1673 ]', price: '$ 100' },
-      { key: 'ICloud Remove By SN Instant - IPad Pro 2nd Gen 10.5(2017) (Wifi Only) [ A1701 ]', price: '$ 170' },
-      { key: 'ICloud Remove By SN Instant - IPad Pro 5th Gen 12.9(2021) (Wifi Only) [ A2378 ]', price: '$ 320' },
-      { key: 'ICloud Remove By SN Instant - IPad 10th Gen (2022) (Wifi Only) [ A2696 ]', price: '$ 200' },
-      { key: 'ICloud Remove By SN Instant - IPad 4th Gen (2012) (Wifi Only) [ A1458 ]', price: '$ 60' },
-      { key: 'ICloud Remove By SN Instant - IPad 5th Gen (2017) (Wifi Only) [ A1822 ]', price: '$ 80' },
-      { key: 'ICloud Remove By SN Instant - IPad 6th Gen (2018) (Wifi Only) [ A1893 ]', price: '$ 90' },
-      { key: 'ICloud Remove By SN Instant - IPad 8th Gen (2020) (Wifi Only) [ A2270 ]', price: '$ 160' },
-      { key: 'ICloud Remove By SN Instant - IPad 9th Gen (2021) (Wifi Only) [ A2602 ]', price: '$ 170' },
-      { key: 'ICloud Remove By SN Instant - IPad Air 2nd Gen (2014) (Wifi Only) [ A1566 ]', price: '$ 50' },
-      { key: 'ICloud Remove By SN Instant - IPad Air 3rd Gen (2019) (Wifi Only) [ A2152 ]', price: '$ 125' },
-      { key: 'ICloud Remove By SN Instant - IPad Air 4th Gen (2020) (Wifi Only) [ A2316 ]', price: '$ 155' },
-      { key: 'ICloud Remove By SN Instant - IPad Mini 2nd Gen (2013) (Wifi Only) [ A1489 ]', price: '$ 40' },
-      { key: 'ICloud Remove By SN Instant - IPad Mini 3rd Gen (2014) (Wifi Only) [ A1599 ]', price: '$ 50' },
-      { key: 'ICloud Remove By SN Instant - IPad Mini 4th Gen (2015) (Wifi Only) [ A1538 ]', price: '$ 80' },
-      { key: 'ICloud Remove By SN Instant - IPad Mini 6th Gen (2021) (Wifi Only) [ A2567 ]', price: '$ 185' },
-      { key: 'ICloud Remove By SN Instant - IPad Pro 1st Gen 11 (2018) (Wifi Only) [ A1980 ]', price: '$ 140' },
-      { key: 'ICloud Remove By SN Instant - IPad 1st Gen 12.9 (2015) (Wifi Only) [ A1584 ]', price: '$ 110' },
-      { key: 'ICloud Remove By SN Instant - IPad Pro 2nd Gen 11 (2020) (Wifi Only) [ A2228 ]', price: '$ 170' },
-      { key: 'Make sure its the Right Model - Order with Serial - Go to history will See it immediately OFF', price: '$ 225' },
-      { key: 'ICloud Remove By SN Instant - IPad Pro 3rd Gen 12.9 (2018) (Wifi Only) [ A1876 ]', price: '$ 235' },
-      { key: 'ICloud Remove By SN Instant - IPad Pro 4th Gen 11 (2022) (Wifi Only) [ A2759 ]', price: '$ 270' },
-      { key: 'ICloud Remove By SN Instant - IPad Pro 4th Gen 12.9 (2020) (Wifi Only) [ A2229 ]', price: '$ 275' },
-      { key: 'ICloud Remove By SN Instant - IPad Pro 6th Gen 12.9 (2022) (Wifi Only) [ A2436 ]', price: '$ 345' },
-      { key: 'ICloud Remove By SN Instant - IPad 3rd Gen (2012) (Wifi Only) [ A1416 ]', price: '$ 35' },
-      { key: 'ICloud Remove By SN Instant - IPad Pro 2nd Gen 12.9 (2017) (Wifi Only) [ A1670 ]', price: '$ 140' },
-      { key: 'ICloud Remove By SN Instant - IPad Mini 5th Gen (2019) (Wifi Only) [ A2133 ]', price: '$ 140' },
-
-    ]
-
-    },
-    {
-      serviceId: 4, 
-      serviceName: "",
-      data: [
-        {
-          key: 'iCloud Remove by SN 1Instant - Apple Watch Series 6 [GPS Only]1-5 Miniutes', price: '$ 110' },
-        {
-          key: 'iCloud Remove by SN Instant - Apple Watch Serie 1 [GPS Only]1-5 Miniutes', price: '$ 50' },
-        {
-          key: 'iCloud Remove by SN Instant - Apple Watch Serie 2 [GPS Only]1-5 Miniutes', price: '$ 55' },
-        {
-          key: 'iCloud Remove by SN Instant - Apple Watch Series 3 [GPS Only]1-5 Miniutes', price: '$ 65' },
-        {
-          key: 'iCloud Remove by SN Instant - Apple Watch Series 4 [GPS Only]1-5 Miniutes',price: '$ 85'},
-        {
-          key: 'iCloud Remove by SN Instant - Apple Watch Series 5 [GPS Only]1-5 Miniutes', price: '$ 90' },
-        {
-          key: 'iCloud Remove by SN Instant - Apple Watch Series 7 [GPS Only]1-5 Miniutes', price: '$ 130' },
-        {
-          key: 'iCloud Remove by SN Instant - Apple Watch Series 8 [GPS Only]1-5 Miniutes', price: '$ 170' },
-        {
-          key: 'iCloud Remove by SN Instant - Apple Watch Series SE 1 [GPS Only]1-5 Miniutes', price: '$ 60' },
-        {
-          key: 'iCloud Remove by SN Instant - Apple Watch Series SE 2 [GPS Only]',price: undefined }
       ]
     },
     {
-      serviceId: 5, 
+      serviceId: 3,
       serviceName: "",
-      data:[
+      data: [
+        { key: 'ICloud Remove By SN Instant - IPad 2nd Gen (2011) (Wifi Only) [ A1395 ]ICloud Remove By SN Instant - IPad 2nd Gen (2011) (Wifi Only) [ A1395 ]', price: '$ 25' },
+        { key: 'ICloud Remove By SN Instant - IPad 7th Gen (2019) (Wifi Only) [ A2197 ]', price: '$ 110' },
+        { key: 'ICloud Remove By SN Instant - IPad Air 1st Gen (2013) (Wifi Only) [ A1474 ]', price: '$ 45' },
+        { key: 'ICloud Remove By SN Instant - IPad Air 5th Gen (2013) (Wifi Only) [ A2588 ]', price: '$ 235' },
+        { key: 'ICloud Remove By SN Instant - IPad Mini 1st Gen (2012) (Wifi Only) [ A1432 ]', price: '$ 30' },
+        { key: 'ICloud Remove By SN Instant - IPad Pro 1st Gen 9.7(2016) (Wifi Only) [ A1673 ]', price: '$ 100' },
+        { key: 'ICloud Remove By SN Instant - IPad Pro 2nd Gen 10.5(2017) (Wifi Only) [ A1701 ]', price: '$ 170' },
+        { key: 'ICloud Remove By SN Instant - IPad Pro 5th Gen 12.9(2021) (Wifi Only) [ A2378 ]', price: '$ 320' },
+        { key: 'ICloud Remove By SN Instant - IPad 10th Gen (2022) (Wifi Only) [ A2696 ]', price: '$ 200' },
+        { key: 'ICloud Remove By SN Instant - IPad 4th Gen (2012) (Wifi Only) [ A1458 ]', price: '$ 60' },
+        { key: 'ICloud Remove By SN Instant - IPad 5th Gen (2017) (Wifi Only) [ A1822 ]', price: '$ 80' },
+        { key: 'ICloud Remove By SN Instant - IPad 6th Gen (2018) (Wifi Only) [ A1893 ]', price: '$ 90' },
+        { key: 'ICloud Remove By SN Instant - IPad 8th Gen (2020) (Wifi Only) [ A2270 ]', price: '$ 160' },
+        { key: 'ICloud Remove By SN Instant - IPad 9th Gen (2021) (Wifi Only) [ A2602 ]', price: '$ 170' },
+        { key: 'ICloud Remove By SN Instant - IPad Air 2nd Gen (2014) (Wifi Only) [ A1566 ]', price: '$ 50' },
+        { key: 'ICloud Remove By SN Instant - IPad Air 3rd Gen (2019) (Wifi Only) [ A2152 ]', price: '$ 125' },
+        { key: 'ICloud Remove By SN Instant - IPad Air 4th Gen (2020) (Wifi Only) [ A2316 ]', price: '$ 155' },
+        { key: 'ICloud Remove By SN Instant - IPad Mini 2nd Gen (2013) (Wifi Only) [ A1489 ]', price: '$ 40' },
+        { key: 'ICloud Remove By SN Instant - IPad Mini 3rd Gen (2014) (Wifi Only) [ A1599 ]', price: '$ 50' },
+        { key: 'ICloud Remove By SN Instant - IPad Mini 4th Gen (2015) (Wifi Only) [ A1538 ]', price: '$ 80' },
+        { key: 'ICloud Remove By SN Instant - IPad Mini 6th Gen (2021) (Wifi Only) [ A2567 ]', price: '$ 185' },
+        { key: 'ICloud Remove By SN Instant - IPad Pro 1st Gen 11 (2018) (Wifi Only) [ A1980 ]', price: '$ 140' },
+        { key: 'ICloud Remove By SN Instant - IPad 1st Gen 12.9 (2015) (Wifi Only) [ A1584 ]', price: '$ 110' },
+        { key: 'ICloud Remove By SN Instant - IPad Pro 2nd Gen 11 (2020) (Wifi Only) [ A2228 ]', price: '$ 170' },
+        { key: 'Make sure its the Right Model - Order with Serial - Go to history will See it immediately OFF', price: '$ 225' },
+        { key: 'ICloud Remove By SN Instant - IPad Pro 3rd Gen 12.9 (2018) (Wifi Only) [ A1876 ]', price: '$ 235' },
+        { key: 'ICloud Remove By SN Instant - IPad Pro 4th Gen 11 (2022) (Wifi Only) [ A2759 ]', price: '$ 270' },
+        { key: 'ICloud Remove By SN Instant - IPad Pro 4th Gen 12.9 (2020) (Wifi Only) [ A2229 ]', price: '$ 275' },
+        { key: 'ICloud Remove By SN Instant - IPad Pro 6th Gen 12.9 (2022) (Wifi Only) [ A2436 ]', price: '$ 345' },
+        { key: 'ICloud Remove By SN Instant - IPad 3rd Gen (2012) (Wifi Only) [ A1416 ]', price: '$ 35' },
+        { key: 'ICloud Remove By SN Instant - IPad Pro 2nd Gen 12.9 (2017) (Wifi Only) [ A1670 ]', price: '$ 140' },
+        { key: 'ICloud Remove By SN Instant - IPad Mini 5th Gen (2019) (Wifi Only) [ A2133 ]', price: '$ 140' },
+
+      ]
+
+    },
+    {
+      serviceId: 4,
+      serviceName: "",
+      data: [
+        {
+          key: 'iCloud Remove by SN 1Instant - Apple Watch Series 6 [GPS Only]1-5 Miniutes', price: '$ 110'
+        },
+        {
+          key: 'iCloud Remove by SN Instant - Apple Watch Serie 1 [GPS Only]1-5 Miniutes', price: '$ 50'
+        },
+        {
+          key: 'iCloud Remove by SN Instant - Apple Watch Serie 2 [GPS Only]1-5 Miniutes', price: '$ 55'
+        },
+        {
+          key: 'iCloud Remove by SN Instant - Apple Watch Series 3 [GPS Only]1-5 Miniutes', price: '$ 65'
+        },
+        {
+          key: 'iCloud Remove by SN Instant - Apple Watch Series 4 [GPS Only]1-5 Miniutes', price: '$ 85'
+        },
+        {
+          key: 'iCloud Remove by SN Instant - Apple Watch Series 5 [GPS Only]1-5 Miniutes', price: '$ 90'
+        },
+        {
+          key: 'iCloud Remove by SN Instant - Apple Watch Series 7 [GPS Only]1-5 Miniutes', price: '$ 130'
+        },
+        {
+          key: 'iCloud Remove by SN Instant - Apple Watch Series 8 [GPS Only]1-5 Miniutes', price: '$ 170'
+        },
+        {
+          key: 'iCloud Remove by SN Instant - Apple Watch Series SE 1 [GPS Only]1-5 Miniutes', price: '$ 60'
+        },
+        {
+          key: 'iCloud Remove by SN Instant - Apple Watch Series SE 2 [GPS Only]', price: undefined
+        }
+      ]
+    },
+    {
+      serviceId: 5,
+      serviceName: "",
+      data: [
         {
           key: 'iCloud Remove WW Instant - IPhone 7Plus1-5 Miniutes',
           price: '$ 37'
@@ -258,9 +285,9 @@ export class CardsComponent implements OnInit {
       ]
     },
     {
-      serviceId: 6, 
+      serviceId: 6,
       serviceName: "",
-      data:[
+      data: [
         {
           key: 'iCloud Remove WW Instant - iPad10-20221-5 Miniutes',
           price: '$ 174'
@@ -360,9 +387,9 @@ export class CardsComponent implements OnInit {
       ]
     },
     {
-      serviceId: 7, 
+      serviceId: 7,
       serviceName: "",
-      data:[
+      data: [
         {
           key: 'Apple Watch ( Series 2 - Cellular )1-5 Miniutes',
           price: '$ 63'
@@ -403,9 +430,9 @@ export class CardsComponent implements OnInit {
       ]
     },
     {
-      serviceId: 9, 
+      serviceId: 9,
       serviceName: "",
-      data:[
+      data: [
         {
           key: 'T-Mobile/Sprint USA - iPhone All Models Supported [ Clean + Financed ]100% Ratio2-9 days',
           price: '$ 240'
@@ -413,9 +440,9 @@ export class CardsComponent implements OnInit {
       ]
     },
     {
-      serviceId: 10, 
+      serviceId: 10,
       serviceName: "",
-      data:[
+      data: [
         {
           key: 'Claro iPhone - All Countries & iPhone Models { 12 Series } Supported - Premium1-4 days',
           price: '$ 29'
@@ -445,12 +472,12 @@ export class CardsComponent implements OnInit {
           price: '$ 27'
         }
       ]
-      
+
     },
     {
-      serviceId: 11, 
+      serviceId: 11,
       serviceName: "",
-      data:[
+      data: [
         {
           key: 'Cricket USA Service iPhone All Models (Clean) [6 Month Old Only Supported]24-36 Hours',
           price: '$ 5'
@@ -458,9 +485,9 @@ export class CardsComponent implements OnInit {
       ]
     },
     {
-      serviceId: 12, 
+      serviceId: 12,
       serviceName: "",
-      data:[
+      data: [
         {
           key: 'iRemove iCloud Bypass for iPad Before 2017 (Cellular) [WITH SIGNAL] [IOS12-15.7.5] (Mac Tool)Miniutes',
           price: '$ 5'
@@ -495,12 +522,12 @@ export class CardsComponent implements OnInit {
         },
         { key: '.8', price: undefined }
       ]
-      
+
     },
     {
-      serviceId: 13, 
+      serviceId: 13,
       serviceName: "",
-      data:[
+      data: [
         {
           key: 'Samsung USA -ALL LEVEL LOCKS (AT&T/Cricket/Xfinity/Spectrum) Galaxy A3/A5/A7/A8/A9/A10E/A20/A21S/A30/A32 5G/A40/A50/A51/A51 5G/A52 5G/A42 5G/A60/A70/A71 5G/A90 5G, J Series,M Series1-24 Hours',
           price: '$ 26'
@@ -535,63 +562,50 @@ export class CardsComponent implements OnInit {
         }
       ]
     }
-      ,
-      {
-        serviceId: 14, 
-        serviceName: "",
-        data:[
-          {
-            key: 'iKey Prime iCloud Bypass For iPads After 2017 [ WITH SIGNAL ] [ iOS-15 / 16 ] (Windows Tool)1-5 Miniutes',
-            price: '$ 25'
-          },
-          {
-            key: 'iKey Prime iCloud Bypass For iPads Before 2017 [ WITH SIGNAL ] [ iOS-15 / 16 ] (Windows Tool)1-5 Miniutes',
-            price: '$ 10'
-          },
-          {
-            key: 'iKey Prime iCloud Bypass For iPhone 5S [ WITH SIGNAL ] [ iOS-12.x ] (Windows Tool)Miniutes',
-            price: '$ 3'
-          },
-          {
-            key: 'iKey Prime iCloud Bypass For iPhone 6/6+ [ WITH SIGNAL ] [ iOS-12.x ] (Windows Tool)Minutes',
-            price: '$ 8'
-          },
-          {
-            key: 'iKey Prime iCloud Bypass For iPhone 6S/6S+/SE1 [ WITH SIGNAL ] [ iOS-15.x ] (Windows Tool)1-5 Miniutes',
-            price: '$ 12'
-          },
-          {
-            key: 'iKey Prime iCloud Bypass For iPhone 7/7+ [ WITH SIGNAL ] [ iOS-15.x ] (Windows Tool)1-5 Miniutes',
-            price: '$ 22'
-          },
-          {
-            key: 'iKey Prime iCloud Bypass For iPhone 8/8+ [ WITH SIGNAL ] [ iOS-15 / 16 ] (Windows Tool)1-5 Miniutes',
-            price: '$ 32'
-          },
-          {
-            key: 'iKey Prime iCloud Bypass For iPhone X [ WITH SIGNAL ] [ iOS-15 / 16 ] (Windows Tool)1-5 Miniutes',
-            price: '$ 38'
-          }
-        ]
-      }        
+    ,
+    {
+      serviceId: 14,
+      serviceName: "",
+      data: [
+        {
+          key: 'iKey Prime iCloud Bypass For iPads After 2017 [ WITH SIGNAL ] [ iOS-15 / 16 ] (Windows Tool)1-5 Miniutes',
+          price: '$ 25'
+        },
+        {
+          key: 'iKey Prime iCloud Bypass For iPads Before 2017 [ WITH SIGNAL ] [ iOS-15 / 16 ] (Windows Tool)1-5 Miniutes',
+          price: '$ 10'
+        },
+        {
+          key: 'iKey Prime iCloud Bypass For iPhone 5S [ WITH SIGNAL ] [ iOS-12.x ] (Windows Tool)Miniutes',
+          price: '$ 3'
+        },
+        {
+          key: 'iKey Prime iCloud Bypass For iPhone 6/6+ [ WITH SIGNAL ] [ iOS-12.x ] (Windows Tool)Minutes',
+          price: '$ 8'
+        },
+        {
+          key: 'iKey Prime iCloud Bypass For iPhone 6S/6S+/SE1 [ WITH SIGNAL ] [ iOS-15.x ] (Windows Tool)1-5 Miniutes',
+          price: '$ 12'
+        },
+        {
+          key: 'iKey Prime iCloud Bypass For iPhone 7/7+ [ WITH SIGNAL ] [ iOS-15.x ] (Windows Tool)1-5 Miniutes',
+          price: '$ 22'
+        },
+        {
+          key: 'iKey Prime iCloud Bypass For iPhone 8/8+ [ WITH SIGNAL ] [ iOS-15 / 16 ] (Windows Tool)1-5 Miniutes',
+          price: '$ 32'
+        },
+        {
+          key: 'iKey Prime iCloud Bypass For iPhone X [ WITH SIGNAL ] [ iOS-15 / 16 ] (Windows Tool)1-5 Miniutes',
+          price: '$ 38'
+        }
+      ]
+    }
 
-  
+
   ]
-  
-  ngOnInit(): void {
-    this.card$ = this.route.paramMap.pipe( switchMap(params => 
-      { 
-        this.id = Number(params.get('id')); 
-        this.title = params.get('groups');
-      return ""; 
-    })); 
-    
-      this.card$.subscribe( (data:any) => {} ); 
-      this.selectedData = this.datas.find(x=> x.serviceId == this.id)
 
-  }
 
-    
-  }
+}
 
 

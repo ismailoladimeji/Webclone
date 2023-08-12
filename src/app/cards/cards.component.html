@@ -83,7 +83,7 @@
 </div>
 
         
-<div class="row" >
+<div class="row" *ngIf="selectedData!=null" >
                                          
    <div class="col-md-3 col-lg-3  col-product" *ngFor="let item of selectedData.data">
         <div class="card   h-100 card-product  ">
@@ -133,7 +133,55 @@
   
             </div>
 
-        
+            <div class="row" *ngIf="selectedData==null" >
+                                         
+                <div class="col-md-3 col-lg-3  col-product">
+                     <div class="card   h-100 card-product  ">
+                         <a class="h-100 d-flex flex-column" href="./imei/iMac-24inch-M1-2021?pid=207">
+                             <div class="position-relative card-product-img">
+                                 <div class="d-flex h-100  align-items-center">
+             
+                                    No Service Available
+                                 </div>
+                                     <div class="text-center">
+                                         <span class="badge badge-danger hot">HOT</span>
+                                     </div>
+                             </div>
+                             <div class="card-body pb-0 position-relative">
+             
+                             <div class="d-none card-info d-lg-block">
+                                 <div class="truncate-text"> {{"item.key"}} </div>
+                                 <div class="price">
+                                     <span>
+                                         <span class="prefix"></span> {{"item.price"}}<span class="suffix"></span>
+                                     </span>
+                                 </div>
+                             </div>
+             
+                             <div class="product-info">
+             
+                                 <span class="service-name">
+                                     {{"item.key"}}
+                                 </span>
+             
+                                <div class="price">
+                                 <span>
+                                     <span class="prefix"></span>{{"item.price"}}<span class="suffix"></span>
+                                 </span>
+                                 </div>
+                                 
+             
+                             </div>
+             
+                             
+                         </div>
+                         </a>
+                     </div>
+                </div>
+             
+             
+               
+                         </div>
 
         
 
