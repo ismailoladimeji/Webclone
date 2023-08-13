@@ -8,6 +8,7 @@ import { SelectLanguageComponent } from './select-language/select-language.compo
 import { BodyComponent } from './body/body.component';
 import { CardsComponent } from './cards/cards.component';
 import { FooterComponent } from './footer/footer.component';
+import { CartsComponent } from './carts/carts.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { FooterComponent } from './footer/footer.component';
     SelectLanguageComponent,
     BodyComponent,
     CardsComponent,
-    FooterComponent
+    FooterComponent,
+    CartsComponent
   ],
   imports: [
     BrowserModule,
