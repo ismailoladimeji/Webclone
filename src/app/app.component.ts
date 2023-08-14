@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { LoginComponent } from './login/login.component';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -9,9 +11,26 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class AppComponent {
   title = 'webCloneProject';
   showed:boolean=false;
+  isUserLoggedIn:boolean=false;
+  User:any=null;
+  @ViewChild('myDiv') myDiv!: ElementRef<HTMLElement>;
+  formData!: FormGroup;
+  link='162t6t24rbjsdmnihirgt732i40i0i40knmnfikkkeyyehtwi83y33737y3y3y73777721882726993'
+  // @ViewChild('childModal') public childModal:ModalDirective;
+
+  // public showChildModal():void {
+  //   this.childModal.show();
+  // }
+  
+  // public hideChildModal():void {
+  //   this.childModal.hide();
+  //  }
   constructor(
     private router: Router, private route : ActivatedRoute) {
 
+    }
+    ngOnInit() {
+     this.getForm();
     }
   serviceObj: any = [ 
     { id: 1, key: 'MDM Bypass Services', refId: 0 },
@@ -148,5 +167,28 @@ export class AppComponent {
    this.showed=this.showed?false:true;
    console.log(true)
   }
+  closeModal($event:any){
+  //  this.isUserLoggedIn=!this.isUserLoggedIn;
+  this.triggerFalseClick()
+  this.User=$event;
+   console.log($event)
+  }
 
+
+triggerFalseClick() {
+    let el: HTMLElement = this.myDiv.nativeElement;
+    el.click();
+}
+
+
+//--------------------------
+getForm(){
+  this.formData = new FormGroup({
+    userName: new FormControl("admin"),
+    password: new FormControl("admin"),
+  });
+}
+onClickSubmit(data:any){
+
+}
 }

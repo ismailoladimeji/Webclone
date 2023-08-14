@@ -8,6 +8,10 @@ import { SelectLanguageComponent } from './select-language/select-language.compo
 import { BodyComponent } from './body/body.component';
 import { CardsComponent } from './cards/cards.component';
 import { FooterComponent } from './footer/footer.component';
+import { LoginComponent } from './login/login.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { LogoutComponent } from './logout/logout.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -15,12 +19,18 @@ import { FooterComponent } from './footer/footer.component';
     SelectLanguageComponent,
     BodyComponent,
     CardsComponent,
-    FooterComponent
+    FooterComponent,
+    LoginComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
      I18nModule,
+     FormsModule,
+ReactiveFormsModule,
+BrowserAnimationsModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

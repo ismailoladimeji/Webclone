@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Poppins&display=swap');
+
+
+.h2 {
+    font-family: 'Kaushan Script', cursive;
+}
+
+.h4 {
+    font-family: 'Poppins', sans-serif
+}
+.top{
+background-color: red;
+}
+.input-field {
+    border-radius: 5px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    color: grey;
+    border: 1px solid grey
+}
+
+.input-field:hover {
+    border: 1px solid black
+}
+
+input {
+    border: none;
+    outline: none;
+    box-shadow: none;
+    width: 100%;
+    padding: 0px 2px;
+    font-family: 'Poppins', sans-serif;
+    background: white;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    text-decoration: none;
+    color: black
+}
+
+
+.btn.btn-block {
+    border-radius: 3px;
+    background-color: black;
+    color: whitesmoke;
+    padding: 10px;
+}
+
+.d-flex{
+         margin-top: -10px;
+         padding-top: 0;
+        }
