@@ -13,7 +13,11 @@ import { ServiceCategoryComponent } from './service-category/service-category.co
 import { ClientAreaComponent } from './client-area/client-area.component';
 import { OrderHistoryComponent } from './order-history/order-history.component';
 import { PaymentinitiateComponent } from './paymentinitiate/paymentinitiate.component';
+//import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { LoginComponent } from './login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { LogoutComponent } from './logout/logout.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -26,12 +30,18 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ServiceCategoryComponent,
     ClientAreaComponent,
     OrderHistoryComponent,
-    PaymentinitiateComponent
+    PaymentinitiateComponent,
+    LoginComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
      I18nModule,
+     FormsModule,
+ReactiveFormsModule,
+BrowserAnimationsModule,
+
      FormsModule,
 ReactiveFormsModule,
 

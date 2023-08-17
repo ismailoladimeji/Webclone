@@ -1,23 +1,25 @@
 <!-- Navigation -->
-<nav class="navbar navbar-expand-lg static-top">
-    <div class="container col-md-11 topNav">
-      <div><span class="text-muted"><i class="fa fa-phone" ></i> +962790097505</span> &nbsp;
-        <span  class="text-muted"><i class="fa fa-envelope"></i> FastUnlocker@gmail.com</span></div>
-        <app-select-language></app-select-language> 
+<nav class="navbar navbar-expand-lg static-top" id="nav">
+  <div class="container col-md-11 topNav">
+    <div><span class="text-muted"><i class="fa fa-phone"></i> +962790097505</span> &nbsp;
+      <span class="text-muted"><i class="fa fa-envelope"></i> FastUnlocker@gmail.com</span>
     </div>
+    <app-select-language></app-select-language>
+  </div>
 </nav>
 <hr>
 <nav class="navbar navbar-expand-lg static-top topNav2">
   <div class="container col-md-11 no-X-Padiing">
     <!-- <a class="navbar-brand" href="#">{{ title }}</a> -->
-    <div class="navbar-brand col-md-2" ><img  style="height: 60px;width: 60%;" alt="logo" src="../assets/img/FASTUNLOCKER LOGO2 png.png"/></div>
+    <div class="navbar-brand col-md-2"><img style="height: 60px;width: 60%;" alt="logo"
+        src="../assets/img/FASTUNLOCKER LOGO2 png.png" /></div>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
       aria-controls="navbarResponsive" aria- expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav ml-auto">
-        <li class="nav-item active test2">
+        <li class="nav-item active test2" *ngIf="!User">
           <a class="nav-link" href="#">{{'Home' |translate}}
             <span class="sr-only">(current)</span>
           </a>
@@ -58,7 +60,7 @@
         </li>
 
 
-        <li class="nav-item test2">
+        <li *ngIf="!User" class="nav-item test2">
           <a class="nav-link" href="#">{{"Registration"| translate}}</a>
           <div class="test"></div>
         </li>
@@ -66,38 +68,69 @@
           <a class="nav-link" href="#">{{"FastUnlucker News-Updates"| translate}}</a>
           <div class="test"></div>
         </li>
+        <li class="nav-item test2" *ngIf="User">
+          <div class="nav-link dropdown">
+            <button class="dropbtn row">
+              <div class=""><i class="fa fa-user-circle-o " style="font-size: 30px;"></i></div>
+              <div>
+                <div class="col-12 text-left" id="name">
+                  {{User?User:"USERID-111"}} <i class="fa fa-angle-down"></i>
+                </div>
+                <div class="col-12 text-left small" id="wallet">
+                  {{"$0"| translate}}
+                </div>
+              </div>
+            </button>
+            <div class="dropdown-content show">
+              <a class="dropdown-item">My Profile</a>
+              <a class="dropdown-item">Add Fund</a>
+              <a class="dropdown-item">My Invoice</a>
+              <a class="dropdown-item">My Mail</a>
+              <a class="dropdown-item">My Statement</a>
+              <a class="dropdown-item">Enail Preference</a>
+              <a class="dropdown-item">Service Status</a>
+              <a class="dropdown-item">Subscription</a>
+              <a class="dropdown-item text-danger">Logout</a>
+            </div>
+          </div>
+          <div class="test"></div>
+        </li>
       </ul>
-      <a class="btn btn-dark text-white"><i class="fa fa-lock mr-2" style="font-size:15px;color: white;"></i>{{"Login"| translate}}</a>
+      <a class="btn btn-dark text-white" *ngIf="!User" type="button" class="btn btn-primary" data-toggle="modal"
+        data-target="#exampleModal" style="background: black;color:white"><i class="fa fa-lock mr-2"
+          style="font-size:15px;color: white;"></i>
+        {{"Login"| translate}}
+      </a>
     </div>
   </div>
 </nav>
 <nav class="navbar navbar-expand-lg static-top topNav3">
   <div class="container col-md-11 ">
-   <div>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
-    aria-controls="navbarResponsive" aria- expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse " id="navbarResponsive">
-    <ul class="navbar-nav ml-auto">
-      <li class="nav-item">
-        <div class="nav-link dropdown" (mouseover)="mouseOver()" (mouseout)="mouseOver()" (click)="mouseOver()">
-          <button class="dropbtn">Sever Service<i class="fa fa-angle-down"></i></button>
-          <!-- <div class="dropdown-content">
+    <div>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+        aria-controls="navbarResponsive" aria- expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse " id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <div class="nav-link dropdown" (mouseover)="mouseOver()" (mouseout)="mouseOver()" (click)="mouseOver()">
+              <button class="dropbtn">Sever Service<i class="fa fa-angle-down"></i></button>
+              <!-- <div class="dropdown-content">
            <div class="min">
             <a class="dropdown-item" *ngFor="let item of serviceObj">IMEI Service</a>
            </div>
           </div> -->
-        </div>
-      </li>
-      <li class="nav-item">
-        <div class="nav-link dropdown"(mouseover)="mouseOver()" (mouseout)="mouseOver()" (click)="mouseOver()">
-          <button class="dropbtn">IMEI Service<i class="fa fa-angle-down"></i></button>
-        </div>
-      </li>
-    </ul>
-  </div>
-   </div>
+            </div>
+          </li>
+          <li class="nav-item">
+            <div class="nav-link dropdown" (mouseover)="mouseOver()" (mouseout)="mouseOver()" (click)="mouseOver()">
+              <button class="dropbtn">IMEI Service<i class="fa fa-angle-down"></i></button>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
     <a class="btn text-white"><i class="fa fa-search" style="font-size:17px"></i></a>
   </div>
 </nav>
@@ -106,8 +139,10 @@
   <app-body></app-body>
 
 </div> -->
-<div class="row col-md-12 p-0 mx-0 dropdown-content pt-4 con" [hidden]="!showed" (mouseover)="showed=true" (mouseout)="showed=false">
-  <a class="min" *ngFor="let item of serviceObj" routerLink="../carts/{{item.refId}}/{{item.key}}" (click)="mouseOver()"><span>{{item.key}}</span></a>
+<div class="row col-md-12 p-0 mx-0 dropdown-content pt-4 con" [hidden]="!showed" (mouseover)="showed=true"
+  (mouseout)="showed=false">
+  <a class="min" *ngFor="let item of serviceObj" routerLink="../carts/{{item.refId}}/{{item.key}}"
+    (click)="mouseOver()"><span>{{item.key}}</span></a>
 </div>
 
 <router-outlet></router-outlet>
@@ -119,3 +154,96 @@
 
 
 
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document" style="width: 28%;">
+    <div class="modal-content">
+      <div class="modal-header top text-white">
+        <h5 class="modal-title" id="exampleModalLabel">Login to Your Account</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" #myDiv>
+          <span aria-hidden="true" class="text-white">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <app-login [id]="0" #Login (modalSave)="closeModal($event)"></app-login>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<a class="btn btn-dark text-white" type="button" class="btn btn-primary" data-toggle="modal"
+  data-target="#exampleModal2" style="background: black;color:white"><i class="fa fa-lock mr-2"
+    style="font-size:15px;color: white;"></i>
+  {{"Login"| translate}}
+</a>
+<div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document" style="width: 28%;">
+    <div class="modal-content">
+      <div class="modal-header top text-white">
+        <h5 class="modal-title" id="exampleModalLabel">Login to Your Account</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" #myDiv>
+          <span aria-hidden="true" class="text-white">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <div class="blog-card spring-fever">
+          <div class="title-content">
+            <div class="intro">
+              <div class="row">
+                <div class="col-12" style="text-align: center;">
+                  <form [formGroup]="formData" (ngSubmit)="onClickSubmit(formData.value)" class="form-signin">
+                    <div class="form-group py-1 ">
+                      <label for = "name">IMEI</label>
+                        <div class="input-field bg-white"> <span class="fa fa-box p-2 bg-white"></span> <input type="text" id="username" class="form-control" formControlName="userName" value=""
+                            placeholder="IMEI " required autofocus> </div>
+                    </div>
+                    <div class = "form-group">
+                      <label for = "name">Comment</label>
+                      <textarea class="input-field form-control" rows = "3" placeholder = "Player Details">
+
+                      </textarea>
+                   </div>
+                    <div class = "form-group">
+                      <label for = "name">Binance Wallet Id</label>
+                      <textarea class="input-field form-control" rows = "3" placeholder = "Player Details" [value]="link" disabled>
+
+                      </textarea>
+                   </div>
+                    <div class="d-flex align-items-start">
+                        <div class="remember"></div>
+                    </div> <button class="btn btn-block text-center my-3">
+                       Place Order</button>
+                </form>
+                </div>
+            </div>
+            </div>
+          </div>
+          <div class="gradient-overlay"></div>
+          <div class="color-overlay"></div>
+        </div><!-- /.blog-card -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <div *ngIf="isUserLoggedIn; else isLogOut">
+  <a class="nav-link"
+  routerLink="/logout">Logout</a>
+  </div>
+  <ng-template #isLogOut>
+  <a class="nav-link"
+  routerLink="/login">Login</a>
+  </ng-template> -->
+
+<!-- <button type="button" class="btn btn-primary" (click)="showChildModal()">Open child modal</button>
+  <div bsModal #childModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+<div class="modal-content">
+<div class="modal-header">
+  <h4 class="modal-title pull-left">Child modal</h4>
+  <button type="button" class="close pull-right" aria-label="Close" (click)="hideChildModal()">
+    <span aria-hidden="true">&times;</span>
+  </button> -->
