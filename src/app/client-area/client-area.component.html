@@ -1,0 +1,483 @@
+<div class="bg-gray">
+    <div class="w-100    min-height">
+        
+
+                <div class="container">
+                    <ul class="breadcrumb">
+                         <i class="fal fa-home"></i>  <a href="">Home</a> / <a href="main.php">Dashboard</a>                         </ul>
+                </div>
+
+
+            <div class="container">
+                <h2 class="page-title">
+                    Client Area Dashboard
+                </h2>
+            </div>
+        
+        <div>
+
+
+
+<div class="client-area">
+
+
+<div class="clientarea-balance    position-relative  firsttime ">
+
+    <div class="container">
+        <div class="page-container">
+
+            <div>                
+
+                <div class="alert alert1 alert-info">Two-Factor Authentication is disabled. Secure your account by enabling two-factor authentication.
+                        <a href="" data-toggle="modal" data-whatever="2-step verification" data-target="#modal-ajax"> Enable </a>
+                </div>
+                
+
+                
+                <div class="row">
+                    <div class="col-lg-8  mb-4 bottom-space">
+
+                        <div class="row">
+                            <div class="col-md-6 col-left">
+                                <div class="card h-100">
+
+                                    <div class="text-muted">
+                                        Your Current Balance
+                                    </div>
+
+
+                                    <div class="d-row">
+
+                                        <h4 class="nowrap   big-font">
+                                            <span class="aftercounter" style="opacity: 1;"> $ 0 </span>
+                                            <span class="counter" data-count="0.00"></span>
+                                            <span class="text-sm aftercounter" style="opacity: 1;"></span>
+                                        </h4>
+
+                                        <div class="aftercounter" style="opacity: 1;">
+                                             <button class="btn btn-primary btn-sm" type="button"  fdprocessedid="utjiuq"><i class="fas fa-shopping-cart"></i> &nbsp; Buy Credit
+                                            </button>
+                                        </div>
+                                    </div>
+
+
+
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 col-right">
+                                <div class="card card-unpaid-balance h-100">
+                                    <div class="aftercounter" style="opacity: 1;">
+                                        <div class="cursor-pointer"  data-whatever="Unpaid Balance" data-toggle="modal" data-target="#modal-ajax">
+                                            <div class="text-muted"> Unpaid Balance   </div>
+                                            <h4 class="big-font text-danger no-wrap"> $ 0     </h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                        <div class="card card-othercredit my-4">
+                            <div id="othercredit" class="aftercounter text-center" style="opacity: 1;">
+                                <div class="row">
+                                    <div class="d-grid mb-4 mb-lg-0">
+                                        <div>
+                                            <div class="card-body">
+                                                <div class="text-center rounded-circle">
+                                                    <i class="fal fa-receipt fa-2x"></i>
+                                                </div>
+                                                <div class="text-muted p-2"> Total Receipts</div>
+                                                <h4 class="nowrap"> $0
+                                                    <span class=""></span>
+                                                    <span class="text-sm"></span>
+                                                </h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="d-grid  mb-4 mb-lg-0">
+                                        <div>
+                                            <div class="card-body">
+                                                <div class="text-center rounded-circle">
+                                                    <i class="fal fa-lock fa-2x"></i>
+                                                </div>
+                                                <div class="text-muted p-2"> Locked Amount</div>
+                                                <h4 class="nowrap"> $0
+                                                    <span class=""></span>
+                                                    <span class="text-sm"></span>
+                                                </h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                               </div>
+                            </div>
+
+                        </div>
+
+
+
+
+                        <div class="clientarea-balance">
+                            <div class="container p-0">
+                                    <div class="page-container">
+                                        <div>                                                                                                                                                                                           
+                                            <div class="row">
+                                             <div class="col-lg-4 col-order-area   mb-4  bottom-space">
+                                                    <div class="card text-center  card-area-status card-order-success h-100">
+                                                        <div class="cursor-pointer  rounded">
+                                                            <h2 class="h2">0 
+                                                                <span class="text-muted" style="font-weight: 100;font-size: 1.3rem">/ 0 </span>
+                                                            </h2>
+                                                        </div>
+                                                        <div class="py-3">
+                                                            <div class="w-100   rounded bg-light position-relative">
+                                                                <div class="bg-success progressbar rounded" style="width: NAN;height:3px"></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="text-muted p-2">Orders process successfully  </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-4  col-order-area  mb-4  bottom-space">
+                                                    <div class="card text-center  card-area-status card-order-process h-100">
+                                                        <div class="cursor-pointer rounded" >
+                                                            <h2 class="h2">0                                                                   
+                                                                <span class="text-muted" style="font-weight: 100;font-size: 1.3rem">/ 0 </span>
+                                                            </h2>
+                                                        </div>
+                                                        <div class="py-3">
+                                                            <div class="w-100   rounded bg-light position-relative">
+                                                                <div class="bg-info progressbar  rounded" style="width: NAN;height:3px"></div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="text-muted p-2">Orders in process</div>
+
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-4  col-order-area  mb-4  bottom-space">
+                                                    <div class="card text-center  card-area-status card-order-fail h-100">
+                                                        <div class="cursor-pointer  rounded" >
+
+                                                            <h2 class="h2">0                                                            
+                                                                <span class="text-muted" style="font-weight: 100;font-size: 1.3rem">/ 0 </span>
+                                                            </h2>
+                                                        </div>
+
+                                                        <div class="py-3">
+                                                            <div class="w-100  rounded bg-light position-relative">
+                                                                <div class="bg-danger progressbar rounded" style="width: NAN;height:3px"></div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="text-muted p-2">Orders process fails</div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                    </div>
+
+                        <div class="aftercounter d-flex" style="opacity: 1;">
+                    <div>
+                        <button class="btn   mr-3" style="background:#0288CB;color: white" data-toggle="modal" type="button" data-target="#modal-telegram" fdprocessedid="nrb7eh">
+                                            <i class="fas fa-paper-plane"></i> &nbsp;
+                                            Connect Telegram
+                                        </button>
+                        <button class="btn    " style="background:#9EC038;color: white" type="button"  fdprocessedid="r09z3h">
+                                    <i class="fab fa-android"></i> &nbsp;
+                                    Android App
+                                        </button>
+                            
+                            </div>
+                        </div>
+                    </div>
+
+
+            <div class="col-lg-4">
+                <div class="card card-announcement">
+                    <h5 class="card-title"> <span> Announcements </span></h5>
+                        <div id="carousel-announcements" class="tabmenu_active">
+            <div class="news-list">
+                <div class="news-text"> Xfinity USA All iPhone models -  ( LifeTime Warranty ) - Clean  : 120 USD </div>
+                <div class="news-date"> 2023-08-13</div>
+            </div>
+            <div class="news-list">
+                <div class="news-text"> EME Mobile Tool (EMT) Standard Edition License Activation : 45.05 USD </div>
+                <div class="news-date"> 2023-08-12</div>
+            </div>
+            
+            <div class="news-list">
+                <div class="news-text"> MobileSea Tool 10 Credit Pack : 6.89 USD </div>
+                <div class="news-date"> 2023-08-12</div>
+            </div>
+
+            
+            <div class="news-list">
+                <div class="news-text"> MobileSea Tool 6 Month Activation : 13.78 USD </div>
+                <div class="news-date"> 2023-08-12</div>
+            </div>
+
+            
+            <div class="news-list">
+                <div class="news-text"> MobileSea Tool 3 Month Activation : 8.48 USD </div>
+                <div class="news-date"> 2023-08-12</div>
+            </div>
+
+            
+            <div class="news-list">
+                <div class="news-text"> MobileSea Tool 12 Month Activation : 16.43 USD </div>
+                <div class="news-date"> 2023-08-12</div>
+            </div>
+
+            
+            <div class="news-list">
+                <div class="news-text"> EME Mobile Tool (EMT) - Credits : 1.378 USD </div>
+                <div class="news-date"> 2023-08-12</div>
+            </div>
+
+            
+            <div class="news-list">
+                <div class="news-text"> GAPro Login Tool - Realme RCSM OTP For Flashing Firmware  : 0.901 USD </div>
+                <div class="news-date"> 2023-08-12</div>
+            </div>
+
+            
+            <div class="news-list">
+                <div class="news-text"> Xiaomi Pro Tool Credit Any Qnt (AUTH, FRP, FASTBOOT TO EDL)  : 0.707 USD </div>
+                <div class="news-date"> 2023-08-12</div>
+            </div>
+
+            
+            <div class="news-list">
+                <div class="news-text"> iCloud Relock Service - All Models with Unlock Code ( OFF to ON ) : 40 USD </div>
+                <div class="news-date"> 2023-08-11</div>
+            </div>
+
+            
+            <div class="news-list">
+                <div class="news-text"> XiaomiKEY - Generate FRP KEY by Token - [FFRP] |API        NO REFUND FOR BAD REQUEST : 0.848 USD </div>
+                <div class="news-date"> 2023-08-11</div>
+            </div>
+
+            
+            <div class="news-list">
+                <div class="news-text"> AT&amp;T Mexico - Unlock iPhone 12, 13 Mini [Premium 100% All Status]  [ Fast ] : 95 USD </div>
+                <div class="news-date"> 2023-08-09</div>
+            </div>
+
+            
+            <div class="news-list">
+                <div class="news-text"> AT&amp;T Mexico - Unlock iPhone 12 Mini [Premiun 100% All Status]  [ Fast ] : 84 USD </div>
+                <div class="news-date"> 2023-08-09</div>
+            </div>
+
+            
+            <div class="news-list">
+                <div class="news-text"> AT&amp;T Mexico - Unlock iPhone 13 Pro, 13 Pro Max [Premiun 100% All Status]  [ Fast ] : 117 USD </div>
+                <div class="news-date"> 2023-08-09</div>
+            </div>
+
+            
+            <div class="news-list">
+                <div class="news-text"> AT&amp;T Mexico - Unlock iPhone 11 / SE 3ra Gen [Premiun 100% All Status]  [ Fast ] : 81 USD </div>
+                <div class="news-date"> 2023-08-09</div>
+            </div>
+
+            
+            <div class="news-list">
+                <div class="news-text"> AT&amp;T Mexico - Unlock iPhone 13 [Premiun 100% All Status]  [ Fast ] : 106 USD </div>
+                <div class="news-date"> 2023-08-09</div>
+            </div>
+
+            
+            <div class="news-list">
+                <div class="news-text"> AT&amp;T Mexico - Unlock iPhone 14 Plus [Premiun 100% All Status]  [ Fast ] : 121 USD </div>
+                <div class="news-date"> 2023-08-09</div>
+            </div>
+
+            
+            <div class="news-list">
+                <div class="news-text"> AT&amp;T Mexico - Unlock iPhone 11 Pro, 11 Pro Max [Premiun 100% All Status]  [ Fast ] : 97 USD </div>
+                <div class="news-date"> 2023-08-09</div>
+            </div>
+
+            
+            <div class="news-list">
+                <div class="news-text"> AT&amp;T Mexico - Unlock iPhone XS Max [Premiun 100% All Status]  [ Fast ] : 81 USD </div>
+                <div class="news-date"> 2023-08-09</div>
+            </div>
+
+            
+            <div class="news-list">
+                <div class="news-text"> AT&amp;T Mexico - Unlock iPhone 8, SE 2020 (2da Gen) [Premiun 100% All Status]  [ Fast ] : 63.5 USD </div>
+                <div class="news-date"> 2023-08-09</div>
+            </div>
+
+            
+
+    
+
+
+</div>
+                                <div class="text-right">
+                                                                        </div>
+                            </div>
+                        </div>
+                                        </div>
+
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+</div>
+
+       
+ </div>
+
+
+
+
+
+
+<script>
+    $(document).ready(function () {
+        var time = 1000;
+        $('.firsttime .counter').each(function () {
+            var $this = $(this),
+                countTo = $this.attr('data-count');
+
+            $({
+                countNum: $this.text()
+            }).animate({
+                    countNum: countTo
+                },
+                {
+                    duration: time,
+                    easing: 'linear',
+                    step: function () {
+                        $this.text(Math.floor(this.countNum));
+                    },
+                    complete: function () {
+                        $this.text(this.countNum);
+                        //alert('finished');
+                    }
+
+                });
+        });
+
+        setTimeout(function () {
+            $('.aftercounter').css({'opacity': 1});
+            if ($('.announce').length) {
+                
+                                    
+            }
+        }, time);
+
+        
+                    
+    });
+</script>
+
+        <div class="modal   hide" id="modal-telegram" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered  modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"><i class="fas fa-paper-plane"></i> &nbsp;&nbsp; Connect Telegram
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span>×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                    <div>
+
+                        <h5 class="p-3 m-3 text-center"> Connect your account with your Telegram  to get
+                            <span style="color:#2da5d8;"> <br>security alerts,  orders status, check orders </span>
+                            etc... </h5>
+
+
+                        <div class="row d-flex align-items-center mt-5">
+
+                            <div class="col-lg-5">
+                                <div class="text-center p-3">
+                                    <h5> Just search for <b> "Guzunlocker_Customerbot" </b> <br> with contacts
+                                    </h5>
+
+                                    <div class="mt-3 p-2 bg-light rounded">
+                                        <div><span style="font-size: 50px"> 39195308 </span></div>
+                                        <span style="color:#888"> Pairing Code  </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-2 text-center">
+                                <h3 class="h3 or"><span class="text-muted"> or </span></h3>
+                            </div>
+
+
+                            <div class="col-lg-5 text-center">
+                                <div class="border rounded">
+                                    <img src="https://chart.googleapis.com/chart?chs=250x250&amp;cht=qr&amp;chl=https%3A%2F%2Ftelegram.me%2FGuzunlocker_Customerbot%3Fstart%3D39195308&amp;choe=UTF-8" class="">
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<div class="modal   hide" id="themeselection" data-backdrop="static" data-keyboard="false" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered  modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"> Theme Mode </h5>
+            </div>
+            <div class="modal-body">
+
+                <div class="d-flex w-100 justify-content-center">
+                    <div>
+                        <div class="border rounded m-3 p-3 thememode" data-value="light">
+                            <img src="templates/default/images/light.png">
+                        </div>
+                        <div class="p-3 text-center"> Light </div>
+                    </div>
+                    <div>
+                        <div class="border rounded m-3 p-3 thememode" data-value="dark">
+                            <img src="templates/default/images/dark.png">
+                        </div>
+                        <div class="p-3 text-center"> Dark </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal" aria-label="Close">OK</button>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+
+<div class="text-center">
+
+</div>
+
+
+

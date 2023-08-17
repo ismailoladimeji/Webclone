@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
       .subscribe(data => {
         console.log("Is Login Success: " + data);
         this.backToAgreementPage(name)
-        if (data) this.router.navigate(['/Home']);
+        if (data) this.router.navigate(['/dashboard']);
         this.clicked=false;
       });
   }
